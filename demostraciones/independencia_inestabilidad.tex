@@ -1,0 +1,175 @@
+\documentclass[a4paper , 14pt, spanish ]{article}
+
+% Codificación e idioma, para las tildes crucial
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+
+%paquetes para matemáticas
+\usepackage{fullpage,mathpazo,amsfonts,nicefrac, amssymb , amsmath, amsbsy}
+\usepackage{amsmath}
+%paquetes para insertar gráficas (imágenes)
+\usepackage{graphicx}
+
+%paquete de enumerar, para realizar listas 
+\usepackage{enumerate}
+
+\usepackage{import}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% formato chulo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55 cuadros bonitos %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{cleveref}
+\usepackage[most]{tcolorbox}
+\newtcbtheorem{Theorem}{Theorem}{
+  enhanced,
+  sharp corners,
+  attach boxed title to top left={
+    yshifttext=-1mm
+  },
+  colback=white,
+  colframe=blue!75!black,
+  fonttitle=\bfseries,
+  boxed title style={
+    sharp corners,
+    size=small,
+    colback=blue!75!black,
+    colframe=blue!75!black,
+  } 
+}{thm}
+\newtcbtheorem[no counter]{Proof}{Ejercicio}{
+  enhanced,
+  sharp corners,
+  attach boxed title to top left={
+    yshifttext=-1mm
+  },
+  colback=white,
+  colframe=blue!25,
+  fonttitle=\bfseries,
+  coltitle=black,
+  boxed title style={
+    sharp corners,
+    size=small,
+    colback=blue!25,
+    colframe=blue!25,
+  } 
+}{prf}
+
+
+
+
+%\documentclass[a4paper]{article} 
+%%
+
+\begin{document}
+
+%-------------------------------
+%	TITLE SECTION
+%-------------------------------
+
+%\fancyhead{}
+%%\hrule\medskip % Upper rule
+%%\begin{minipage}{0.295\textwidth} 
+
+%%\end{minipage}
+%%\begin{minipage}{0.4\textwidth} 
+%\centering 
+%\large 
+%Tema 1%\\ 
+%\normalsize
+
+%\flushright
+%%\footnotesize
+%Blanca Cano Camarero %%\hfill %\\   
+
+
+%\end{minipage}
+%\begin{minipage}{0.295\textwidth} 
+%\flushleft
+%\today%%\hfill%\\
+%\end{minipage}
+%\medskip\hrule 
+%\bigskip
+
+
+\raggedright
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Ejercicio 7 tema 1}
+\author{Blanca Cano Camarero}
+
+%\begin{document}
+%\maketitle
+
+\begin{table}[ht]
+  \resizebox{\textwidth}{!}{
+    \small
+\begin{tabular}[t]{ccc}
+  Blanca Cano Camarero & Ecuaciones diferenciales II & \today \\
+  \hline
+ 
+\end{tabular}}
+
+\end{table}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\parindent}{10ex} %% tabulador al principio
+
+\begin{Proof}{7 tema 1}{}
+Demuestra que la propiedad de estabilidad de una ecuación lineal es independiente del instante fijado $t_o$.
+\end{Proof}
+
+
+Sea $\varphi: (\alpha , + \infty) \rightarrow \mathbb R^d$ una  solución  estable en  $t_0 \in (\alpha, +\infty)$ de la ecuación lineal
+$x' = A(t) x + b(t)$ (*).  \\ 
+
+ La definición dada en teoría de estabilidad es la siguiente:  \\
+
+Para todo $\epsilon > 0$ existirá  un $\delta > 0$ tal que para cualquier
+otra solución 
+$\mathcal X  : (\alpha , + \infty) \rightarrow \mathbb R^d$ de la ecuación (*) que cumpla que   $\| \varphi(t_o) - \mathcal X(t_0) \| < \delta$,
+se tendrá entonces que   $\| \varphi(t) - \mathcal X(t) \| < \epsilon$ para  $t>t_0$ . \\
+
+Nótese que con dicha definición, a priori la estabilidad depende de $t_o$, vemos ahora que es independiente. \\
+
+
+
+En virtud de una de las equivalencias de caracterización de estabilidad, sabemos que  si
+$\varphi : (\alpha , + \infty) \rightarrow \mathbb R^d$ es solución estable para $t_0 \in (\alpha, +\infty)$  entonces
+para cualquier solución $y : (\alpha , + \infty) \rightarrow \mathbb R^d$ de la ecuación homogénea $y' = A(t) y$ se cumple que está acotada en
+$[t_o, \infty)$.
+
+Veamos ahora que para un instante  $t_1 \in (\alpha, +\infty)$ arbitario  existirá $M \in \mathbb R$ cumpliendo  que 
+$\|y(s)\|< M$ para cualquier $s \in [t_1, +\infty)$, es decir que está acotada y por ende es estable para $t_1$.
+
+Distingamos los siguientes casos:
+
+\begin{enumerate}
+
+\item Si $t_o \leq t_1$ se tiene que $[t_1, +\infty) \subseteq [t_o, +\infty)$ para el cual está acotada por hipótesis, luego no habría nada que probar.
+
+\item Si $t_1 < t_0$ entonces por el razonamiento anterior sabríamos que está acotado en $[t_o, +\infty)$, faltando por comprabar que también lo está en el
+  compacto $[t_1, t_0]$. \\
+
+  Conocemos además que $y$ es continua,  la norma también y la composición de continuas es continua. \\
+
+  Toda función continua tiene  máximo dentro de un compacto, es decir existe $M \in \mathbb R$ para el cual $\|y(s)\|< M$ sea cual sea $s \in [t_1, t_0]$. \\
+
+  Concluímos por tanto que estaría acotada en $[t_1, t_0]$  por compacidad y en $[t_o, +\infty)$ por la hipótesis de estabilidad en $t_0$, probando con esto la estabilidad en $t_1.$ \\
+
+    Como $t_1$ era arbitrario queda demostrado que la estabilida no depende del instante inicial de la demostración. 
+
+    
+
+  
+  
+\end{enumerate}
+
+
+
+
+
+
+\end{document}
