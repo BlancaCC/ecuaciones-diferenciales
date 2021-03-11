@@ -1,0 +1,130 @@
+\documentclass[a4paper , 14pt, spanish ]{article}
+
+% Codificación e idioma, para las tildes crucial
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+
+%paquetes para matemáticas
+\usepackage{fullpage,mathpazo,amsfonts,nicefrac, amssymb , amsmath, amsbsy}
+\usepackage{amsmath}
+%paquetes para insertar gráficas (imágenes)
+\usepackage{graphicx}
+
+%paquete de enumerar, para realizar listas 
+\usepackage{enumerate}
+
+\usepackage{import}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% formato chulo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55 cuadros bonitos %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{cleveref}
+\usepackage[most]{tcolorbox}
+\newtcbtheorem{Theorem}{Theorem}{
+  enhanced,
+  sharp corners,
+  attach boxed title to top left={
+    yshifttext=-1mm
+  },
+  colback=white,
+  colframe=blue!75!black,
+  fonttitle=\bfseries,
+  boxed title style={
+    sharp corners,
+    size=small,
+    colback=blue!75!black,
+    colframe=blue!75!black,
+  } 
+}{thm}
+\newtcbtheorem[no counter]{Proof}{Ejercicio}{
+  enhanced,
+  sharp corners,
+  attach boxed title to top left={
+    yshifttext=-1mm
+  },
+  colback=white,
+  colframe=blue!25,
+  fonttitle=\bfseries,
+  coltitle=black,
+  boxed title style={
+    sharp corners,
+    size=small,
+    colback=blue!25,
+    colframe=blue!25,
+  } 
+}{prf}
+
+
+
+
+%\documentclass[a4paper]{article} 
+%%
+
+\begin{document}
+
+%-------------------------------
+%	TITLE SECTION
+%-------------------------------
+
+%\fancyhead{}
+%%\hrule\medskip % Upper rule
+%%\begin{minipage}{0.295\textwidth} 
+
+%%\end{minipage}
+%%\begin{minipage}{0.4\textwidth} 
+%\centering 
+%\large 
+%Tema 1%\\ 
+%\normalsize
+
+%\flushright
+%%\footnotesize
+%Blanca Cano Camarero %%\hfill %\\   
+
+
+%\end{minipage}
+%\begin{minipage}{0.295\textwidth} 
+%\flushleft
+%\today%%\hfill%\\
+%\end{minipage}
+%\medskip\hrule 
+%\bigskip
+
+
+\raggedright
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Ejercicio 7 tema 1}
+\author{Blanca Cano Camarero}
+
+%\begin{document}
+%\maketitle
+
+\begin{table}[ht]
+  \resizebox{\textwidth}{!}{
+    \small
+\begin{tabular}[t]{ccc}
+  Blanca Cano Camarero & Ecuaciones diferenciales II & \today \\
+  \hline
+ 
+\end{tabular}}
+
+\end{table}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\parindent}{10ex} %% tabulador al principio
+
+\begin{Proof}{7 tema 1}{}
+
+
+\end{Proof}
+
+
+
+
+
+
+\end{document}

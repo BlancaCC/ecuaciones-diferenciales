@@ -1,0 +1,263 @@
+\documentclass[a4paper , 14pt, spanish ]{article}
+
+% Codificación e idioma, para las tildes crucial
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+
+%paquetes para matemáticas
+\usepackage{fullpage,mathpazo,amsfonts,nicefrac, amssymb , amsmath, amsbsy}
+\usepackage{amsmath}
+%paquetes para insertar gráficas (imágenes)
+\usepackage{graphicx}
+
+%paquete de enumerar, para realizar listas 
+\usepackage{enumerate}
+
+\usepackage{import}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% formato chulo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55 cuadros bonitos %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{cleveref}
+\usepackage[most]{tcolorbox}
+\newtcbtheorem{Theorem}{Theorem}{
+  enhanced,
+  sharp corners,
+  attach boxed title to top left={
+    yshifttext=-1mm
+  },
+  colback=white,
+  colframe=blue!75!black,
+  fonttitle=\bfseries,
+  boxed title style={
+    sharp corners,
+    size=small,
+    colback=blue!75!black,
+    colframe=blue!75!black,
+  } 
+}{thm}
+\newtcbtheorem[no counter]{Proof}{Ejercicio}{
+  enhanced,
+  sharp corners,
+  attach boxed title to top left={
+    yshifttext=-1mm
+  },
+  colback=white,
+  colframe=blue!25,
+  fonttitle=\bfseries,
+  coltitle=black,
+  boxed title style={
+    sharp corners,
+    size=small,
+    colback=blue!25,
+    colframe=blue!25,
+  } 
+}{prf}
+
+
+
+
+%\documentclass[a4paper]{article} 
+%%
+
+\begin{document}
+
+%-------------------------------
+%	TITLE SECTION
+%-------------------------------
+
+%\fancyhead{}
+%%\hrule\medskip % Upper rule
+%%\begin{minipage}{0.295\textwidth} 
+
+%%\end{minipage}
+%%\begin{minipage}{0.4\textwidth} 
+%\centering 
+%\large 
+%Tema 1%\\ 
+%\normalsize
+
+%\flushright
+%%\footnotesize
+%Blanca Cano Camarero %%\hfill %\\   
+
+
+%\end{minipage}
+%\begin{minipage}{0.295\textwidth} 
+%\flushleft
+%\today%%\hfill%\\
+%\end{minipage}
+%\medskip\hrule 
+%\bigskip
+
+
+\raggedright
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Ejercicio extra teórico tema 1}
+\author{Blanca Cano Camarero}
+
+%\begin{document}
+%\maketitle
+
+\begin{table}[ht]
+  \resizebox{\textwidth}{!}{
+    \small
+\begin{tabular}[t]{ccc}
+  Blanca Cano Camarero & Ecuaciones diferenciales II & \today \\
+  \hline
+ 
+\end{tabular}}
+
+\end{table}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\parindent}{10ex} %% tabulador al principio
+
+\begin{Proof}{Extra teórico tema 1}{}
+
+  Sea $A: \mathbb R \longrightarrow \mathcal {M}_d (\mathbb R )$ continua y $T$-periódica dondde $T>0$
+  y sea $\phi: \mathbb R \longrightarrow  \mathcal {M}_d (\mathbb R )$ la matriz fundamental principal en $t=0$
+  de la EDO lineal homogénea
+  $$(*) x' = A(t) x. $$
+
+
+  Prueba:
+
+  \begin{enumerate}
+  \item Prueba que existe una matriz $M$, llamada matriz de monondromía, tal que $\phi(t+T) = \phi(t) \dot M$ para todo $t \in \mathbb R.$
+
+  \item Prueba que (*) es asintóticamente estable sii $ \lim_{ n \longrightarrow \infty} M^n = 0.$
+
+  \item Prueba que (*) es estable sii $\{ M^n : n \in \mathbb N\}$ es acotada.
+
+  \item Los valores propios de $M$ reciben el nombre de multiplicadores de Floquet ¿Puedes caracterizar la estabilidad, inestabilidad y estabilidad asintótica
+    de (*) en función de los multiplicadores de Floque?
+    
+
+    
+    \end{enumerate}
+ 
+\end{Proof}
+
+
+\subsection{Existencia matriz de monodromía }
+
+
+Por ser matriz fundamental sabemos que es invertible y además  cumple que $\phi'(t) = A(t) \phi(t)$
+despejamos  $A(t) = \phi'(t)  \phi^{-1}(t)  \; (1).$\\
+
+Utilizando ahora la $T-$periodicidad   tenemos que $\phi'(t+T) = A(t+T) \phi(t+T) =  A(t) \phi(t+T) \; (2).$ \\
+
+Sustituyendo el valor de $A(t)$ de (1) en (2) llegamos a que :
+
+$$\phi'(t+T) =  \phi'(t)  \phi^{-1}(t)  \phi(t+T)$$
+
+Multiplicando a la izquierda por la inversa de $\phi'(t)  \phi^{-1}(t)$
+
+$$\phi(t) {\phi'(t)}^{-1}    \phi'(t+T) =   \phi(t+T)$$
+
+Si llamamos $M =  {\phi'(t)}^{-1}    \phi'(t+T)$ acabamos de encontrar la matriz de monodromía buscada. 
+
+
+
+
+
+\subsection{ Prueba que (*) es asintóticamente estable sii $\lim_{ n \longrightarrow \infty} M^n = 0.$}
+
+
+Veamos primero la siguiente observación: \\
+Cuando $t$ es lo suficientemente grande, podemos escribir $t = t_0+ nT$ con $t_0 \in [0, T)$ y $n \in \mathbb N.$
+
+De donde podemos ver que:
+
+$$\phi(t) =  \phi(t_0 + nT) = \phi(t_0 + (n-1)T) M = \phi(t_0) M^n$$
+
+Recordemos ahora caracterización equivalente de asintóticamente estable:
+
+(*) será asintóticamente estable (un atractor) si la matriz fundamente de (**) converge hacia 0 cuantdo $t$ tiende a infinito.
+
+Como no tiene porqué darse el caso trivial de que  $\phi(t_0) = 0$ para todo $t_0 \in [0, T)$,  entonces necesariamente (y suficientemente)   $\lim_{ n \longrightarrow \infty} M^n = 0$ sii $\lim_{t \longrightarrow}\phi(t) = 0$
+
+ 
+
+\subsection { Prueba que (*) es estable sii $\{ M^n : n \in N \}$ es acotada.}
+
+Recordemos que por las equivalencias de estabilidad,  (*) será estable sii la matriz fundamental está acotada en $[0, \infty)$
+  (La estabilidad  es invariante del punto seleccionado como extremo inferior, por ello he seleccionado el 0).   \\
+
+
+Sabemos que  $\phi(t_0)$ está acotada en $t \in [0, T]$ por ser compacto. \\
+
+Teniendo presente la observación anterior: \\
+
+Para $t> 0$  podemos escribir  $t = t_0+ nT$ con $t_0 \in [0, T)$ y $n \in \mathbb N.$
+
+$$\phi(t) = \phi(t_0) M^n$$
+
+Ya hemos visto que $\phi(t_0)$ está acotada, luego  $\phi(t)$ estará acotada si y solo si $\{ M^n : n \in \mathbb N\}$ lo está.
+
+
+\subsection{ Caracterización de  la estabilidad, inestabilidad y estabilidad asintótica  de (*). }
+
+En los apartado 2 y 3 de la demostración ya hemos caracterizado la estabilidad y la estabilidad asintótica en función de $M.$
+
+A partir de sus valores propios podemos ver $M = P J P^{-1}$ donde $J$  es una matriz de Jordan y $P$ su respectiva matriz de paso.
+Además $M^n = P J^n P^{-1}.$
+
+Podemos pues ligar el compartamiento asintótico de $M^n$ al de $J^n$ que depende exclusivamente de los valores propios de $M.$
+
+Recordemao que si $J_m$ una caja de jordan de la forma:  \\
+\[
+J_m =
+\begin{bmatrix}
+  a & 1 & ...& .. &  0\\
+  0 & a & 1 & ... &  0\\
+  &  & ... & & \\
+  0 & ... &..& 0 & a
+\end{bmatrix}_{m \times m}	
+\]
+
+Entonces con $\mathcal{X}_{n-(m-fila)>0}$  la función característica. 
+
+\[
+J_m^n =
+\begin{bmatrix}
+  a^n &  a^{n-1} n && .. & \frac{a^{n-(m-1)} (n+m-fila)!}{(m-1)!} \mathcal{X}_{n-(m-fila)>0} \\
+  0 & a^n & a^{n-1} n  & ... &  \frac{a^{n-(m-fila)} (n+m-fila)! }{(m-fila)!} \mathcal{X}_{n-(m-fila)>0} \\
+  &  & ... & & \\
+  0 & ... &..& 0 & a^n
+\end{bmatrix}_{m \times m}	
+\]
+
+Asintóticamente los componentes de la matriz triangular superior dependen esclusivamente de $a$.
+
+
+Finalemente y para estudiar el caso complejo podemos pensar los valores en su forma polar $\lambda = r e^{i \theta}$ y está claro que
+$\lambda ^n  = r^n e^{i n \theta}.$ Donde $r = |\lambda|$ es el módulo,  $\theta$ el ángulo que forman y $n$ un número natural. Como la exponencial compleja nunca se anula, necesariamente el valor asíntótico también dependerá del módulo. 
+
+
+
+
+
+\begin{enumerate}
+
+\item \textbf{Estabilidad asintótica.} Si $M^n$ tiende a la matriz $0$ cuando $n$ tiende a infinito o equivalentemente si  $J^n$ tiende
+  a la matriz  $0$ cuando $n$ tiende a infinito. \\
+  Esto será si $| \lambda | < 1$  para todo $\lambda \in \sigma (M).$
+
+  \item \textbf{Estabilidad} Si $\{ M^n : n \in N \}$ está acotada o quivalentemente si  $\{ J^n : n \in N \}$ está acotada.  \\
+    Esto será si $ |\lambda| \leq 1$  para cualquier $\lambda \in \sigma (M).$
+
+  \item \textbf{ Inestabilidad} Teniendo en cuenta los casos anteriores esto será si existe un valor propio de $M$ con módulo estrictamente mayor que uno. 
+
+  
+\end{enumerate}
+
+
+
+
+\end{document}
